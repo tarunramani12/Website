@@ -1,0 +1,151 @@
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+                      http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+  version="3.0"
+  metadata-complete="true">
+
+  <filter>
+    <filter-name>LoginCheckFilter</filter-name>
+    <filter-class>tarunwebsite.memberInfo.LoginCheckFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>LoginCheckFilter</filter-name>
+    <servlet-name>WelcomeServlet</servlet-name>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>LoginCheckFilter</filter-name>
+    <servlet-name>LogoutServlet</servlet-name>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>LoginCheckFilter</filter-name>
+    <servlet-name>SettingsServlet</servlet-name>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>LoginCheckFilter</filter-name>
+    <servlet-name>UpdateSettingsServlet</servlet-name>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>LoginCheckFilter</filter-name>
+    <servlet-name>UpdatePasswordServlet</servlet-name>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>LoginCheckFilter</filter-name>
+    <servlet-name>ShowCartServlet</servlet-name>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>LoginCheckFilter</filter-name>
+    <servlet-name>AddToCartServlet</servlet-name>
+  </filter-mapping>
+
+  <servlet>
+    <servlet-name>WelcomeServlet</servlet-name>
+    <servlet-class>tarunwebsite.memberInfo.WelcomeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>WelcomeServlet</servlet-name>
+    <url-pattern>/Welcome</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>tarunwebsite.memberInfo.LoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/Login</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>SettingsServlet</servlet-name>
+    <servlet-class>tarunwebsite.memberInfo.SettingsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SettingsServlet</servlet-name>
+    <url-pattern>/Settings</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>ShowCartServlet</servlet-name>
+    <servlet-class>tarunwebsite.shopInfo.ShowCartServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ShowCartServlet</servlet-name>
+    <url-pattern>/Cart</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>AddToCartServlet</servlet-name>
+    <servlet-class>tarunwebsite.shopInfo.AddToCartServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddToCartServlet</servlet-name>
+    <url-pattern>/AddToCart</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>MerchandiseServlet</servlet-name>
+    <servlet-class>tarunwebsite.shopInfo.MerchandiseServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MerchandiseServlet</servlet-name>
+    <url-pattern>/Merchandise</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>LogoutServlet</servlet-name>
+    <servlet-class>tarunwebsite.memberInfo.LogoutServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LogoutServlet</servlet-name>
+    <url-pattern>/Logout</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>UpdateSettingsServlet</servlet-name>
+    <servlet-class>tarunwebsite.memberInfo.UpdateSettingsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateSettingsServlet</servlet-name>
+    <url-pattern>/UpdateSettings</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>UpdatePasswordServlet</servlet-name>
+    <servlet-class>tarunwebsite.memberInfo.UpdatePasswordServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdatePasswordServlet</servlet-name>
+    <url-pattern>/UpdatePassword</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>RegisterServlet</servlet-name>
+    <servlet-class>tarunwebsite.memberInfo.RegisterServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RegisterServlet</servlet-name>
+    <url-pattern>/Register</url-pattern>
+  </servlet-mapping>
+
+  <welcome-file-list>
+    <welcome-file>Home.jsp</welcome-file>
+  </welcome-file-list>
+
+</web-app>
