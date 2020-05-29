@@ -69,21 +69,83 @@
             <td style="padding: 10px; max-width: 1200px">
                 <div class="middle-div">
 
-                <%
-            Collection c = (Collection)request.getAttribute("cartItems");
-            Vector cartItems = (Vector)c;
-            out.println(request.getParameter("cartMessage"));
-        %>
-                
-                <%
-                Enumeration<CartItem> en = cartItems.elements();
-                while(en.hasMoreElements()) {
-                    CartItem ci = en.nextElement();
-                    out.println(String.valueOf(ci.quantity));
-                }
+                <div style="width: 800px; margin-left: auto; margin-right: auto;">
 
-                %>
+                    <%
+                    Vector cart = (Vector)request.getAttribute("cart");
+                    double totalAmount = 0;
+                    int totalItems = 0;
+                    if(cart == null) {
+                        out.println("<p style=\"color: red; text-align: center;\">There was an error in getting your cart information</p>");
+                    }
+
+                    else if (cart.size() == 0) {
+                    out.println("<p style=\"color: red; text-align: center;\">Your cart is empty</p>");
+                    }
+
+                    else {
+
+                        Enumeration<CartProduct> en = cart.elements();
+                    %>
+
+                    <table style="padding-top: 20px; border-collapse: collapse;">
+                    <%
+                    while(en.hasMoreElements()) {
+                        CartProduct pro = en.nextElement();
+                    %>
+
+                    <form method="POST" action="/Website/UpdateCart">
+
+                        <tr style="border-bottom:1px solid lightgray; font-size: 13px;">
+                            <td style="width: 100px; padding: 20px;">
+                                <img src="<%=pro.getImagePath()%>" style="max-width: 75px; max-height: 75px;">
+                            </td>
+
+                            <td style="width: 350px; padding: 20px;">
+                                <h4><%=pro.getMerchName()%></h4>
+                                Qty.: <input type="number" name="qty<%=pro.getCartId()%>" value="<%=pro.getQuantity()%>" style="width: 30px;">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                Varient: <b><%=pro.getVarientDescription()%></b>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <b>Rs. <%=pro.getCost()%></b><br>
+                                
+                                <br>
+                                <input type="submit" value="UPDATE" name="update" style="font-family: montserrat,sans-serif;">
+                            
+                            </td>
+                            <td style="width: 100px; vertical-align: bottom; padding: 20px;">
+                                <input type="submit" value="REMOVE FROM CART" name="remove" style="font-family: montserrat,sans-serif;">
+                            </td>
+                            <%
+                            totalAmount = totalAmount + pro.getCost();
+                            totalItems = totalItems + pro.getQuantity();
+                            %>
+                        </tr>
+                    </form>
+                    <%
+                    }
+                    %>
+                    <form>
+                        <tr style="font-size: 13px;">
+                            <td colspan="2"style="padding-top: 20px;">
+                                Total Items: &nbsp;&nbsp;&nbsp;&nbsp;<b><%=totalItems%></b>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                Amount: &nbsp;&nbsp;&nbsp;&nbsp;<b>Rs. <%=totalAmount%></b>
+                            </td>
+                        </tr>
+                        <tr style="border-bottom:1px solid black; font-size: 13px;">
+                            <td colspan="3"style="padding-top: 10px; padding-bottom: 10px;">
+                                <input type="submit" value="PURCHASE CART" name="purchase" style="font-family: montserrat,sans-serif; width: 100%;">
+                            </td>
+                        </tr>
+                    </form method="POST" action="/PurchaseCart">
+
+                    </table>
+                    <%
+                    }
+                    %>
                         
+                </div>
                 </div>
                 
             </td>
@@ -92,13 +154,12 @@
             <tr width="100%" height="10%">
             <td style="background-color: white; padding: 10px;">
                 <div class="bottom-div">
+                
                     <span class="contact-links"> 
                         <a href="https://www.imdb.com/name/nm7049244/" target="_blank"><img src="IMDb.png" title="IMDb" style="width: 18px"></a>
                         <a href="https://www.instagram.com/instarunramani/" target="_blank"><img src="Instagram.png" title="Instagram" style="width: 18px"></a>
                         <a href="mailto:tarunramani12@gmail.com"><img src="Email.png" title="Email" style="width: 18px"></a>
                     </span>
-
-                    <span style="text-align: right; font-size: 13;"><a href="#" class="link">CHAT</a></span>
 
                 </div>
             </td>

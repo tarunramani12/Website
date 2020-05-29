@@ -53,6 +53,10 @@
     <filter-name>LoginCheckFilter</filter-name>
     <servlet-name>AddToCartServlet</servlet-name>
   </filter-mapping>
+  <filter-mapping>
+    <filter-name>LoginCheckFilter</filter-name>
+    <servlet-name>UpdateCartServlet</servlet-name>
+  </filter-mapping>
 
   <servlet>
     <servlet-name>WelcomeServlet</servlet-name>
@@ -88,6 +92,15 @@
   <servlet-mapping>
     <servlet-name>ShowCartServlet</servlet-name>
     <url-pattern>/Cart</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>UpdateCartServlet</servlet-name>
+    <servlet-class>tarunwebsite.shopInfo.UpdateCartServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateCartServlet</servlet-name>
+    <url-pattern>/UpdateCart</url-pattern>
   </servlet-mapping>
 
   <servlet>

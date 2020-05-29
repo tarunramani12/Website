@@ -63,8 +63,8 @@
                     <%
                     String addToCartMessage = (String)request.getAttribute("addToCartMessage");
                     if(addToCartMessage != null)
-                        if(addToCartMessage == "Items successfully added to cart")
-                            out.println("<p style=\"color: green; text-align: center;\">Items successfully added to cart</p>");
+                        if(addToCartMessage == "Items added to cart")
+                            out.println("<p style=\"color: green; text-align: center;\">Items added to cart</p>");
                         else
                             out.println("<p style=\"color: red; text-align: center;\">" + addToCartMessage + "</p>");
                     Vector products = (Vector)request.getAttribute("products");
@@ -119,11 +119,11 @@
                                     </select>
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-                                    <b>Qty: &nbsp;&nbsp;&nbsp;</b><input type="number" name="quantity" value="1" style="width: 30px;">
+                                    <b>Qty.: &nbsp;&nbsp;&nbsp;</b><input type="number" name="quantity" value="1" style="width: 30px;">
 
                             </td>
                             <td style="width: 100px; vertical-align: bottom; padding: 20px;">
-                                <input type="submit" value="Add To Cart" style="font-family: montserrat,sans-serif;">
+                                <input type="submit" value="ADD TO CART" style="font-family: montserrat,sans-serif;">
                             </td>
                         </tr>
 
@@ -142,13 +142,12 @@
             <tr width="100%" height="10%">
             <td style="background-color: white; padding: 10px;">
                 <div class="bottom-div">
+
                     <span class="contact-links"> 
                         <a href="https://www.imdb.com/name/nm7049244/" target="_blank"><img src="IMDb.png" title="IMDb" style="width: 18px"></a>
                         <a href="https://www.instagram.com/instarunramani/" target="_blank"><img src="Instagram.png" title="Instagram" style="width: 18px"></a>
                         <a href="mailto:tarunramani12@gmail.com"><img src="Email.png" title="Email" style="width: 18px"></a>
                     </span>
-
-                    <span style="text-align: right; font-size: 13;"><a href="#" class="link">CHAT</a></span>
 
                 </div>
             </td>

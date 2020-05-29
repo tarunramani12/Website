@@ -75,8 +75,6 @@
                         <a href="mailto:tarunramani12@gmail.com"><img src="Email.png" title="Email" style="width: 18px"></a>
                     </span>
 
-                    <span style="text-align: right; font-size: 13;"><a href="#" class="link">CHAT</a></span>
-
                 </div>
             </td>
             </tr>

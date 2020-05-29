@@ -77,13 +77,12 @@
             <tr width="100%" height="10%">
             <td style="background-color: white; padding: 10px;">
                 <div class="bottom-div">
+                
                     <span class="contact-links"> 
                         <a href="https://www.imdb.com/name/nm7049244/" target="_blank"><img src="IMDb.png" title="IMDb" style="width: 18px"></a>
                         <a href="https://www.instagram.com/instarunramani/" target="_blank"><img src="Instagram.png" title="Instagram" style="width: 18px"></a>
                         <a href="mailto:tarunramani12@gmail.com"><img src="Email.png" title="Email" style="width: 18px"></a>
                     </span>
-
-                    <span style="text-align: right; font-size: 13;"><a href="#" class="link">CHAT</a></span>
 
                 </div>
             </td>
